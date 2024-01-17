@@ -30,14 +30,14 @@ contract PurchaseAgreement {
         }
         _;
     }
-
+/// Only the buyer can call this function
     modifier onlyBuyer() {
         if(msg.sender != buyer) {
             revert OnlyBuyer();
         }
         _;
     }
-
+/// Only the seller can call this function
     modifier onlySeller() {
         if(msg.sender != seller) {
             revert OnlySeller();
